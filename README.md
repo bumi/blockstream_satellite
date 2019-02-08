@@ -89,7 +89,7 @@ Currently I consider this gem experimental and it is missing tests current.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/blockstream_satellite.
+Bug reports and pull requests are welcome on GitHub at https://github.com/bumi/blockstream_satellite.
 
 ## License
 
