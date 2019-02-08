@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["hello@michaelbumann.com"]
 
   spec.summary       = %q{API client for the Blockstream satellite}
-  spec.description   = %q{API clent to interact with the Blockstream satellite}
+  spec.description   = %q{API client to interact with the Blockstream satellite}
   spec.homepage      = "http://github.com/bumi/blockstream_satellite"
   spec.license       = "MIT"
 
