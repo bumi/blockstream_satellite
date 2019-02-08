@@ -70,6 +70,17 @@ order = BlockstreamSatellite::Order.get(uuid: 'uuid', auth_token: 'auth_token')
 order.bump(1000)
 ```
 
+### Pay for an order
+
+```ruby
+order = BlockstreamSatellite::Order.get(uuid: 'uuid', auth_token: 'auth_token')
+# or
+order = BlockstreamSatellite::Order.create(path: '/path/to/file')
+
+order.pay
+puts order.status
+```
+
 
 ## Satus
 
