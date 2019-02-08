@@ -86,7 +86,8 @@ puts order.status
 
 ## Status
 
-Currently I consider this gem experimental and it is missing tests current.  
+Currently I consider this gem experimental and the codes needs cleanup it tests are missing at this moment. 
+Will try to get is stable soon! 
 
 
 ## Contributing
