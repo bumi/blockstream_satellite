@@ -82,7 +82,7 @@ puts order.status
 ```
 
 
-## Satus
+## Status
 
 Currently I consider this gem experimental and it is missing tests current.  
 
