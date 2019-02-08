@@ -7,7 +7,7 @@ require 'securerandom'
 module BlockstreamSatellite
   class Order
 
-    attr_accessor :attributes
+    attr_accessor :attributes, :file
 
     def initialize(attributes)
       self.attributes = attributes.with_indifferent_access
@@ -37,7 +37,7 @@ module BlockstreamSatellite
       options[:file] = UploadIO.new(options[:file], 'text/plain')
       response = BlockstreamSatellite.client.post('order', options)
       if response.success?
-        Order.new(response.body)
+        Order.new(response.body).tap { |o| o.file = options[:file] }
       else
         response
       end
@@ -59,8 +59,12 @@ module BlockstreamSatellite
     end
 
     def pay
-      BlockstreamSatellite.client.pay(self.payreq)
-      self.refresh
+      response = BlockstreamSatellite.client.pay(self.payreq)
+      if response.payment_error == ''
+        self.refresh
+      else
+        response
+      end
     end
 
     def bump(bid_increase)
