@@ -34,7 +34,7 @@ module BlockstreamSatellite
         options[:file] = File.open(path)
       end
       options[:bid] ||= options[:file].size * 51 # default price
-      options[:file] = UploadIO.new(options[:file], 'text/plain')
+      options[:file] = UploadIO.new(options[:file], 'text/plain') # TODO: get rid of this content type here
       response = BlockstreamSatellite.client.post('order', options)
       if response.success?
         Order.new(response.body).tap { |o| o.file = options[:file] }
