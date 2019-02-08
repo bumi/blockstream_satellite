@@ -1,4 +1,4 @@
-# BlockstreamSatellite - use ruby to send messages to space and back
+# Blockstream Satellite - with ruby to space and back
 
 Ruby gem to interact with the [Blockstream Satellite](https://blockstream.com/satellite/) API.  
 
