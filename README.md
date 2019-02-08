@@ -16,6 +16,8 @@ Or install it yourself as:
 
     $ gem install blockstream_satellite
 
+**Because of an [protobuf issue with Ruby 2.6](https://github.com/protocolbuffers/protobuf/issues/5161) a ruby version < 2.6 is required**
+
 
 ## Usage
 
