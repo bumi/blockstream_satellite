@@ -15,7 +15,6 @@ module BlockstreamSatellite
     end
 
     def post(path, body = nil, &block)
-      puts body.inspect
       request(:post, path, nil, body, &block)
     end
 
