@@ -1,4 +1,4 @@
-# BlockstreamSatellite
+# BlockstreamSatellite - use ruby to send messages to space and back
 
 Ruby gem to interact with the [Blockstream Satellite](https://blockstream.com/satellite/) API.  
 
@@ -83,10 +83,16 @@ order.pay
 puts order.status
 ```
 
+### Missing endpoints: 
+
+* DELETE /order/:uuid
+* GET /orders/queued
+* GET /orders/sent
+* GET /subscribe/:channels
 
 ## Status
 
-Currently I consider this gem experimental and the codes needs cleanup it tests are missing at this moment. 
+Currently I consider this gem **experimental** and the codes needs cleanup and tests and docs are missing at this moment. 
 Will try to get is stable soon! 
 
 
