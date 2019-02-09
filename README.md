@@ -24,6 +24,8 @@ Or install it yourself as:
 ### Quick example
 
 ```ruby
+require "blockstream_satellite"
+
 order = BlockstreamSatellite::Order.create(path: '/path/to/file')
 puts order.status # pending
 order.pay # sends the lightning payment using the configured lnd client; request is synchronous
