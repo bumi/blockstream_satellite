@@ -9,7 +9,7 @@ module BlockstreamSatellite
   autoload :Configuration, 'blockstream_satellite/configuration'
   autoload :Response, 'blockstream_satellite/response'
 
-  API_HOST = 'https://satellite.blockstream.com'
+  API_HOST = 'https://api.blockstream.space'
 
   def self.lnd_client=(value)
     @lnd_client = value

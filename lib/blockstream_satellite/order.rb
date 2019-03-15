@@ -25,16 +25,11 @@ module BlockstreamSatellite
     end
 
     def self.create(options)
-      if data = options.delete(:data)
-        file = Tempfile.new(SecureRandom.hex(5))
-        file.write(data)
-        file.rewind
-        options[:file] = file
-      elsif path = options.delete(:path)
+      if path = options.delete(:path)
+        options[:file] = UploadIO.new(options[:file], 'text/plain') # TODO: get rid of this content type here
         options[:file] = File.open(path)
       end
-      options[:bid] ||= options[:file].size * 51 # default price
-      options[:file] = UploadIO.new(options[:file], 'text/plain') # TODO: get rid of this content type here
+      options[:bid] ||= (options[:file] || options[:message]).size * 51 # default price
       response = BlockstreamSatellite.client.post('order', options)
       if response.success?
         Order.new(response.body).tap { |o| o.file = options[:file] }

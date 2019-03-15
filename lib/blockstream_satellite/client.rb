@@ -19,12 +19,12 @@ module BlockstreamSatellite
     end
 
     def pay(payreq)
-      self.lnd_client.send_payment_sync(Lnrpc::SendRequest.new(payment_request: payreq))
+      self.lnd_client.send_payment_sync(payment_request: payreq)
     end
 
     def request(http_method, path, params=nil, body=nil)
       response = http_client.send(http_method) do |req|
-        req.url "/api/#{path}"
+        req.url "/#{path}"
         req.params = params if params
         req.body = body if body
         yield req if block_given?
