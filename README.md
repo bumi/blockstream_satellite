@@ -54,7 +54,7 @@ BlockstreamSatellite.lnd_client = lnd_client
 `BlockstreamSatellite::Order.create` accepts the following parameters: 
 
 * `path`: path to the file to transmit
-* `data`: data to transmit; can be used as an alternative `path`
+* `message`: message to transmit; can be used as an alternative `path`
 * `bid`: bid for the order. defaults to file size * 51
 
 ```ruby
